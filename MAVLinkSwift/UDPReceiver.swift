@@ -65,6 +65,9 @@ extension mavlink_message_t: CustomStringConvertible {
             var sys_status = mavlink_sys_status_t()
             mavlink_msg_sys_status_decode(&message, &sys_status)
             return "SYS_STATUS comms drop rate: \(sys_status.drop_rate_comm)%\n"
+        case 24:
+            let gps = mavlink_gps_raw_int_t()
+            return "GPS_RAW_INT lat: \(gps.lat) lng: \(gps.lon) alt: \(gps.alt)"
         case 30:
             var attitude = mavlink_attitude_t()
             mavlink_msg_attitude_decode(&message, &attitude)
@@ -73,6 +76,8 @@ extension mavlink_message_t: CustomStringConvertible {
             return "LOCAL_POSITION_NED\n"
         case 33:
             return "GLOBAL_POSITION_INT\n"
+        case 65:
+            return "RC_CHANNELS"
         case 74:
             var vfr_hud = mavlink_vfr_hud_t()
             mavlink_msg_vfr_hud_decode(&message, &vfr_hud)
@@ -83,10 +88,23 @@ extension mavlink_message_t: CustomStringConvertible {
             var highres_imu = mavlink_highres_imu_t()
             mavlink_msg_highres_imu_decode(&message, &highres_imu)
             return "HIGHRES_IMU Pressure: \(highres_imu.abs_pressure) millibar\n"
+        case 109:
+            return "RADIO_STATUS"
+        case 125:
+            return "POWER_STATUS"
+        case 141:
+            let altitude = mavlink_altitude_t()
+            return "ALTITUDE: \(altitude)"
         case 147:
             var battery_status = mavlink_battery_status_t()
             mavlink_msg_battery_status_decode(&message, &battery_status)
             return "BATTERY_STATUS current consumed: \(battery_status.current_consumed) mAh\n"
+        case 241:
+            let vibration = mavlink_vibration_t()
+            return "VIBRATION: \(vibration)"
+        case 242:
+            let home = mavlink_home_position_t()
+            return "HOME_POSITION: lat: \(home.latitude) lon: \(home.longitude) alt: \(home.altitude)"
         default:
             return "OTHER Message id \(message.msgid) received\n"
         }
