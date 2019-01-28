@@ -1,0 +1,6 @@
+framework module Pods_MAVLinkSwiftTests {
+  umbrella header "Pods-MAVLinkSwiftTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
