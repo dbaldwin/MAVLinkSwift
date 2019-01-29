@@ -14,6 +14,7 @@
 		2318B90921FEA88D00DB7F41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2318B90721FEA88D00DB7F41 /* LaunchScreen.storyboard */; };
 		2318B91421FEA88E00DB7F41 /* MAVLinkSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2318B91321FEA88E00DB7F41 /* MAVLinkSwiftTests.swift */; };
 		2318B91F21FF599C00DB7F41 /* UDPReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2318B91E21FF599C00DB7F41 /* UDPReceiver.swift */; };
+		2318B92121FFAB0F00DB7F41 /* UDPSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2318B92021FFAB0F00DB7F41 /* UDPSender.swift */; };
 		8190F73F8A7FFBB12D04A507 /* Pods_MAVLinkSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07260EA379289D5CFAA7FDCC /* Pods_MAVLinkSwiftTests.framework */; };
 		D2140675A0880EEAE0FDFEF5 /* Pods_MAVLinkSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DFAB62C041D45A023DE1420 /* Pods_MAVLinkSwift.framework */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,7 @@
 		2318B91321FEA88E00DB7F41 /* MAVLinkSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAVLinkSwiftTests.swift; sourceTree = "<group>"; };
 		2318B91521FEA88E00DB7F41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2318B91E21FF599C00DB7F41 /* UDPReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPReceiver.swift; sourceTree = "<group>"; };
+		2318B92021FFAB0F00DB7F41 /* UDPSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPSender.swift; sourceTree = "<group>"; };
 		319ACE61F5C17FDFCA14DD9E /* Pods-MAVLinkSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MAVLinkSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MAVLinkSwift/Pods-MAVLinkSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		4DFAB62C041D45A023DE1420 /* Pods_MAVLinkSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MAVLinkSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		625E0D9CCE1827C07EF63306 /* Pods-MAVLinkSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MAVLinkSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MAVLinkSwiftTests/Pods-MAVLinkSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				2318B90721FEA88D00DB7F41 /* LaunchScreen.storyboard */,
 				2318B90A21FEA88D00DB7F41 /* Info.plist */,
 				2318B91E21FF599C00DB7F41 /* UDPReceiver.swift */,
+				2318B92021FFAB0F00DB7F41 /* UDPSender.swift */,
 			);
 			path = MAVLinkSwift;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2318B92121FFAB0F00DB7F41 /* UDPSender.swift in Sources */,
 				2318B90121FEA88C00DB7F41 /* ViewController.swift in Sources */,
 				2318B8FF21FEA88C00DB7F41 /* AppDelegate.swift in Sources */,
 				2318B91F21FF599C00DB7F41 /* UDPReceiver.swift in Sources */,
@@ -460,6 +464,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TP7ZU94CZV;
 				INFOPLIST_FILE = MAVLinkSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -480,6 +485,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TP7ZU94CZV;
 				INFOPLIST_FILE = MAVLinkSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

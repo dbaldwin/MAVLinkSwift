@@ -23,12 +23,12 @@ class UDPReceiver {
     }
     
     public func listenForData() {
-        
-        while true {
-            let response = receiver.recv(512)
-            parseMavMessage(message: response.0!)
+        DispatchQueue.global(qos: .background).async {
+            while true {
+                let response = self.receiver.recv(512)
+                self.parseMavMessage(message: response.0!)
+            }
         }
-        
     }
     
     private func parseMavMessage(message: [Byte]) {
@@ -43,7 +43,7 @@ class UDPReceiver {
             let channel = UInt8(MAVLINK_COMM_1.rawValue)
             
             if mavlink_parse_char(channel, byte, &message, &status) != 0 {
-                print(message.description)
+                print(message)
             }
         }
     }
@@ -60,7 +60,7 @@ extension mavlink_message_t: CustomStringConvertible {
         case 0:
             var heartbeat = mavlink_heartbeat_t()
             mavlink_msg_heartbeat_decode(&message, &heartbeat)
-            return "HEARTBEAT mavlink_version: \(heartbeat.mavlink_version)\n"
+            return "HEARTBEAT mavlink_version: \(heartbeat)\n"
         case 1:
             var sys_status = mavlink_sys_status_t()
             mavlink_msg_sys_status_decode(&message, &sys_status)
